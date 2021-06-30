@@ -28,7 +28,7 @@ def register_view(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(user)
+            login(request,user)
         return redirect("home")
     else:
         form = RegisterForm()

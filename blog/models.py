@@ -12,7 +12,7 @@ class Blog(models.Model):
     body = models.TextField() #제한 없음.
     image = models.ImageField(upload_to="blog/", blank=True, null=True )
     community = models.CharField(max_length=100, choices=COMMUNITY_CHOICES,default="C1")
-
+    
     def __str__(self):
         return self.title
 

@@ -9,7 +9,20 @@
             {%if blog.image %}
                 <p><img src="{{blog.image.url}}"></p>
             {% endif %}
-            <p>{{blog.body}}</p>
+            <table class="table table-striped">
+                {% for comment in comments %}
+                    <tr>
+                        <td>{{comment.text}}</td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="{% url 'blog:comment_delete'  comment.id %}">삭제하기</a></td>
+                    </tr>
+                {% endfor %}
+                <form action="{% url 'blog:detail' blog.id %}" method="post">
+                    {%csrf_token%}
+                    {{comment_form}}
+                </form>
+            </table>
             <a href="{% url 'blog:edit' blog.id %}">수정하기</a>
             <a href="{% url 'blog:delete' blog.id %}">삭제하기</a>
     </body>

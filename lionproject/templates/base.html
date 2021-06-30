@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="x-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>블로그가 만들고 싶어 제발</title>
+        <title>여행을 떠나요</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -13,7 +13,6 @@
             body{text-align:center};
             *{font-family: 'Black Han Sans', sans-serif}
             .nav-item{font-style:italic};
-            
         </style>
     </head>
     <body>
@@ -28,10 +27,10 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   {% if user.is_authenticated %}
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{% url 'new' %}">새글쓰기</a>
+                    <a class="nav-link" href="{% url 'logout' %}">로그아웃</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">로그아웃</a>
+                    <a class="nav-link" href="{% url 'hub' %}">HOME</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'home' %}">커뮤니티1</a>
@@ -51,7 +50,7 @@
                     <a class="nav-link" href="{% url 'signup' %}">회원가입</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}">HOME</a>
+                    <a class="nav-link" href="{% url 'hub' %}">HOME</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'home' %}">커뮤니티1</a>
@@ -63,26 +62,6 @@
                     <a class="nav-link" href="{% url 'home3' %}">커뮤니티3</a>
                   </li>
                   {% endif %}
-                  
-                  <!--<li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>-->
               </div>
             </div>
           </nav>
