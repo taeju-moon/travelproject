@@ -18,3 +18,4 @@ urlpatterns = [
     path('delete/<str:id>', delete, name="delete"),
     path('comment_delete/<str:id>', comment_delete, name="comment_delete"),
 ]
+
