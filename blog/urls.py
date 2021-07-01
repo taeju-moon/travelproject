@@ -5,11 +5,11 @@ from .views import *
 
 app_name = 'blog'
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    path('',hub,name="hub"),
     path('home/',home,name="home"),
     path('home2/',home2,name="home2"),
     path('home3/',home3,name="home3"),
+    path('hub/',hub,name="hub"),
+    path('search/',search,name="search"),
     path('<str:id>', detail, name="detail"), #id(기본키에 따라 화면 다르게 표시), detail은 함수이름
     path('new/', new, name='new'),
     path('create/', create, name="create"),

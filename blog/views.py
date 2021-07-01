@@ -90,3 +90,9 @@ def comment_delete(request,id):
     delete_comment.delete()
     return redirect('blog:detail', blog_id)
 
+def search(request):
+    blogs = Blog.objects.filter(writer=request.GET["searcher"])
+    paginator = Paginator(blogs, 3)
+    page = int(request.GET.get('page',1))
+    blogs = paginator.page(page)
+    return render(request, 'home.html', {'blogs':blogs})

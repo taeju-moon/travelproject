@@ -42,13 +42,19 @@
                     <a class="nav-link" href="{% url 'hub' %}">HOME</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}">커뮤니티1</a>
+                    <a class="nav-link" href="{% url 'home' %}">미국</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home2' %}">커뮤니티2</a>
+                    <a class="nav-link" href="{% url 'home2' %}">일본</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home3' %}">커뮤니티3</a>
+                    <a class="nav-link" href="{% url 'home3' %}">캐나다</a>
+                  </li>
+                  <li class="nav-item">
+                    <form action="">
+                      <input type="text" name="searcher" id="searchNickname"/>
+                      <button type="submit">검색하기</button>
+                    </form>
                   </li>
                   {%endif%}
                   {% if not user.is_authenticated %}
@@ -62,13 +68,19 @@
                     <a class="nav-link" href="{% url 'hub' %}">HOME</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}">커뮤니티1</a>
+                    <a class="nav-link" href="{% url 'home' %}">미국</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home2' %}">커뮤니티2</a>
+                    <a class="nav-link" href="{% url 'home2' %}">일본</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home3' %}">커뮤니티3</a>
+                    <a class="nav-link" href="{% url 'home3' %}">캐나다</a>
+                  </li>
+                  <li class="nav-item">
+                    <form action="{% url 'search' %}">
+                      <input type="text" name="searcher" id="searchNickname"/>
+                      <button type="submit">검색</button>
+                    </form>
                   </li>
                   {% endif %}
               </div>

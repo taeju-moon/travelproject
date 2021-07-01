@@ -1,8 +1,8 @@
 from django.db import models
 COMMUNITY_CHOICES = (
-        ('C1', 'Community1'),
-        ('C2', 'Community2'),
-        ('C3', 'Community3'),
+        ('C1', '미국'),
+        ('C2', '일본'),
+        ('C3', '캐나다'),
     )
 
 class Blog(models.Model):

@@ -1,7 +1,7 @@
 
 {% extends 'base.html' %}
 {%block content%}
-<h1>Write Ur Blog</h1>
+<h1>새로운 글 작성하기</h1>
 
 <form action="{% url 'blog:create' %}" method="post" enctype="multipart/form-data">
     {%csrf_token%}

@@ -2,11 +2,11 @@
 
 {%block content%}
         {% if user.is_authenticated %}
-        {{user.name}}안녕하세요
+        {{user.nickname}}님 안녕하세요
         {%endif%}
-        <h1>Blog Project</h1>
+        <h1>여행을 떠나요</h1>
         <div>
-            <a href='{% url "blog:new" %}'>write blog</a>
+            <a href='{% url "blog:new" %}'>새글쓰기</a>
         </div>
         <div class="container">
         {% for blog in blogs%}

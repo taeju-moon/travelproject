@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {%block content%}
-<h1>update Ur Blog</h1>
+<h1>게시글을 편집하세요</h1>
 
 <form action="{%url 'blog:update' blog.id %}" method="post">
     {%csrf_token%}
