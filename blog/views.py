@@ -96,9 +96,28 @@ def comment_delete(request,id):
     delete_comment.delete()
     return redirect('blog:detail', blog_id)
 
+def comment_delete_handle(request,id):
+    delete_comment = Comment.objects.get(id=id)
+    blog_id = delete_comment.document.id
+    delete_comment.delete()
+    return redirect('blog:my_comment')
+
 def search(request):
     blogs = Blog.objects.filter(writer=request.GET["searcher"])
     paginator = Paginator(blogs, 3)
     page = int(request.GET.get('page',1))
     blogs = paginator.page(page)
     return render(request, 'home.html', {'blogs':blogs})
+
+def my_post(request):
+    current_user = request.user
+    blogs = Blog.objects.filter(writer=current_user)
+    paginator = Paginator(blogs, 3)
+    page = int(request.GET.get('page',1))
+    blogs = paginator.page(page)
+    return render(request, 'home3.html', {'blogs':blogs})
+
+def my_comment(request):
+    current_user = request.user
+    comments = Comment.objects.filter(author=current_user)
+    return render(request,'my_comment.html', {"comments":comments})

@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+
+{%block content%}
+        {% if user.is_authenticated %}
+        {{user.nickname}}님 안녕하세요
+        {%endif%}
+        <h1>여행을 떠나요</h1>
+        <div class="container">
+        {% for comment in comments%}
+            <div>
+                <p>{{comment.text}}
+                    <a href="{% url 'blog:comment_delete_handle'  comment.id %}">삭제하기</a>
+                </p>
+
+            </div>
+        {% endfor %}
+        </div>
+{%endblock%}

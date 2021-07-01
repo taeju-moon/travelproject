@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from blog.views import home, home2, home3, hub,search
+from blog.views import home, home2, home3, hub,search,my_post,my_comment
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -29,4 +29,6 @@ urlpatterns = [
     path('home3/',home3,name="home3"),
     path('hub/',hub,name="hub"),
     path('detail/',search,name="search"),
+    path('home/',my_post,name="my_post"),
+    path('my_comment/',my_comment,name="my_comment"),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
