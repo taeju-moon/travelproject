@@ -28,5 +28,5 @@ urlpatterns = [
     path('home2/',home2,name="home2"),
     path('home3/',home3,name="home3"),
     path('hub/',hub,name="hub"),
-    path('search/',search,name="search"),
+    path('detail/',search,name="search"),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -5,6 +5,7 @@ COMMUNITY_CHOICES = (
         ('C3', '캐나다'),
     )
 
+
 class Blog(models.Model):
     title = models.CharField(max_length=200) #제한 있음.
     writer = models.CharField(max_length=100)

@@ -5,6 +5,8 @@ from .models import Blog
 from .forms import BlogForm
 from comments.models import Comment
 from comments.forms import CommentForm
+from account.models import CustomUser
+from account.forms import RegisterForm
 
 # Create your views here.
 
@@ -38,6 +40,9 @@ def home3(request):
 
 def detail(request, id):
     blog = get_object_or_404(Blog, pk=id)
+    current_user = request.user.username
+    owner_user = Blog.objects.get(id=id).writer
+    comment = "아직 써진 댓글이 없습니다."
     if request.method == "POST":
         comment_form = CommentForm(request.POST)
         comment_form.instance.author_id = request.user.id
@@ -51,7 +56,7 @@ def detail(request, id):
     comment_form = CommentForm()
     comments = Blog.objects.get(id=id).comments.all()
     print(type(comments))
-    return render(request, 'detail.html', {'blog':blog, "comments":comments, "comment_form":comment_form})
+    return render(request, 'detail.html', {'blog':blog, "comments":comments, "comment_form":comment_form, "current_user":current_user, "owner_user":owner_user, "comment":comment})
 
 def new(request):
     form = BlogForm()
@@ -62,6 +67,7 @@ def create(request):
     if form.is_valid():
         new_blog = form.save(commit=False)
         new_blog.pub_date = timezone.now()
+        new_blog.writer = request.user
         new_blog.save()
         return redirect('blog:detail', new_blog.id )
     return redirect('blog:home')
