@@ -50,12 +50,12 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'home3' %}">캐나다</a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <form action="">
                       <input type="text" name="searcher" id="searchNickname"/>
                       <button type="submit">검색하기</button>
                     </form>
-                  </li>
+                  </li> -->
                   {%endif%}
                   {% if not user.is_authenticated %}
                   <li class="nav-item">
@@ -76,12 +76,12 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'home3' %}">캐나다</a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <form action="{% url 'search' %}">
                       <input type="text" name="searcher" id="searchNickname"/>
                       <button type="submit">검색</button>
                     </form>
-                  </li>
+                  </li> -->
                   {% endif %}
               </div>
             </div>
