@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from blog.views import home, home2, home3, hub,search,my_post,my_comment
+from blog.views import home, home2, home3, hub,search,my_post,my_comment,comment_delete_handle
 from django.conf import settings
 from django.conf.urls.static import static
 

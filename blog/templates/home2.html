@@ -5,9 +5,11 @@
         {{user.nickname}}님 안녕하세요
         {%endif%}
         <h1>여행을 떠나요</h1>
+        {% if user.is_authenticated %}
         <div>
             <a href='{% url "blog:new" %}'>새글쓰기</a>
         </div>
+        {% endif %}
         <div class="container">
         {% for blog in blogs%}
             <div>

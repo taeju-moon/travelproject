@@ -27,10 +27,12 @@
                         {% endif %}
                     </tr>
                 {% endfor %}
+                {% if user.is_authenticated %}
                 <form action="{% url 'blog:detail' blog.id %}" method="post">
                     {%csrf_token%}
                     {{comment_form}}
                 </form>
+                {% endif %}
             </table>
             {% if current_user == owner_user %}
                 <a href="{% url 'blog:edit' blog.id %}">수정하기</a>
